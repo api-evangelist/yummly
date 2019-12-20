@@ -1,0 +1,82 @@
+{
+    "name": "yummly",
+    "description": "The smart cooking sidekick that learns what you like and customizes the experience to your personal tastes, nutritional needs, skill level, and more.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2155-yummly.jpg",
+    "tags": [
+        "have api",
+        "recipes",
+        "semantic",
+        "target"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/yummly\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "yummly",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2155-yummly.jpg",
+            "humanURL": "https:\/\/yummly.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/yummly-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/yummly-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "API.json - Authoritative",
+            "url": "http:\/\/apis.io\/apisdef\/yummly.json"
+        },
+        {
+            "type": "Base",
+            "url": "http:\/\/api.yummly.com\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.yummly.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.yummly.com\/blog\/feed\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/yummly"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/yummly"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.yummly.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@yummly.com"
+        },
+        {
+            "type": "Email",
+            "url": "terms@yummly.com"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/#!\/yummly"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/yummly.com"
+        }
+    ]
+}
