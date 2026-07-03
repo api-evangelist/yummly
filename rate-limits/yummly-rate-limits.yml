@@ -1,0 +1,65 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Yummly
+providerId: yummly
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+status: deprecated
+tags:
+- Recipes
+- Food
+- Recipe Search
+- Deprecated
+- Historical
+- Rate Limiting
+- Quotas
+description: >-
+  HISTORICAL / DEPRECATED. The Yummly Recipe API's usage limits were expressed as
+  monthly call allowances tied to each developer plan rather than as per-second
+  throttles: a free evaluation cap of roughly 500 calls, a Lite tier of about
+  250,000 calls/month, and a Plus tier of about 4,000,000 calls/month, with
+  per-call overage billing above the allowance. These quotas applied to the
+  Search Recipes, Get Recipe, and Metadata endpoints. The developer program is
+  deprecated and the api.yummly.com endpoints are offline, so none of these limits
+  are enforced or obtainable today; they are recorded for archival reference.
+notes: >-
+  Yummly did not publish a documented per-second or per-minute request-rate cap;
+  usage was governed by the plan's monthly call allowance. The developer portal no
+  longer resolves. See the plans file for the corresponding historical allowances
+  and overage rates.
+sources:
+- https://developer.yummly.com/plans
+- https://developer.yummly.com/documentation.html
+responseCodes:
+  throttled: 429
+limits:
+- name: Free Evaluation Allowance
+  scope: account
+  metric: requests
+  limit: '~500 total (historical)'
+  notes: Evaluation cap for testing; no longer available.
+- name: Lite Plan Monthly Allowance
+  scope: account
+  metric: requests
+  limit: '~250000 per month (historical)'
+  notes: Overage billed at ~$0.002 per additional call.
+- name: Plus Plan Monthly Allowance
+  scope: account
+  metric: requests
+  limit: '~4000000 per month (historical)'
+  notes: Overage billed at ~$0.001 per additional call.
+- name: Request Rate Throttle
+  scope: account
+  metric: requests
+  limit: not published
+  notes: No documented per-second/per-minute rate limit; usage governed by monthly plan allowance.
+policies:
+- name: Deprecated Program
+  description: The Yummly developer API program is deprecated; new signups were closed and the api.yummly.com endpoints are offline. No limits are enforceable today.
+- name: Attribution Requirement
+  description: All historical plans required displaying Yummly Attribution alongside recipe data returned by the API.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

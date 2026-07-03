@@ -1,0 +1,107 @@
+aid: yummly
+url: https://raw.githubusercontent.com/api-evangelist/yummly/refs/heads/main/apis.yml
+name: Yummly
+kind: company
+description: Yummly is a recipe and food discovery platform (yummly.com) offering
+  semantic and visual recipe search, personalized recommendations, shopping lists,
+  and guided cooking. Founded in 2009 (Redwood City, CA), Yummly was acquired by
+  Whirlpool Corporation in May 2017 and operated as a wholly owned subsidiary tied
+  to Whirlpool's smart-kitchen strategy. Yummly historically ran a well-known public
+  Recipe API (developer.yummly.com) exposing recipe search, recipe details, and
+  metadata endpoints. That developer program was DEPRECATED - it stopped accepting
+  new signups and was wound down (commonly cited end date of September 30, 2019),
+  and the developer.yummly.com developer portal and api.yummly.com endpoints are no
+  longer available. There is no public Yummly developer API accepting new
+  registrations as of this cataloging (2026-07-03); the APIs below are documented as
+  historical / modeled for archival and migration reference only.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Recipes
+- Food
+- Cooking
+- Recipe Search
+- Food Discovery
+- Deprecated
+- Historical
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+apis:
+- aid: yummly:yummly-recipe-search-api
+  name: Yummly Recipe Search API (Historical)
+  tags:
+  - Recipe Search
+  - Search
+  - Deprecated
+  - Historical
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.yummly.com/documentation.html
+  baseURL: http://api.yummly.com/v1/api
+  properties:
+  - url: https://developer.yummly.com/documentation.html
+    type: Documentation
+  - url: https://developer.yummly.com/
+    type: APIReference
+  description: DEPRECATED / HISTORICAL. The Search Recipes endpoint
+    (GET http://api.yummly.com/v1/api/recipes) returned recipe matches as JSON with
+    optional filters combined via AND - free-text query (q), maxResult / start
+    paging, and facets such as allowedIngredient/excludedIngredient,
+    allowedCuisine, allowedCourse, allowedAllergy, allowedDiet, allowedHoliday,
+    maxTotalTimeInSeconds, and nutrition/taste ranges. Authenticated with _app_id
+    and _app_key query parameters. This endpoint and the developer.yummly.com
+    program are no longer available; endpoint modeled from historical documentation
+    and community client libraries.
+- aid: yummly:yummly-recipe-details-api
+  name: Yummly Recipe Details API (Historical)
+  tags:
+  - Recipe Details
+  - Recipe
+  - Deprecated
+  - Historical
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.yummly.com/documentation.html
+  baseURL: http://api.yummly.com/v1/api
+  properties:
+  - url: https://developer.yummly.com/documentation.html
+    type: Documentation
+  description: DEPRECATED / HISTORICAL. The Get Recipe endpoint
+    (GET http://api.yummly.com/v1/api/recipe/{recipe-id}) returned the full detail
+    for a single recipe by its Yummly recipe id - ingredient lines, nutrition
+    estimates, flavor/taste profile, total cooking time, source attribution, and
+    image URLs. Authenticated with _app_id and _app_key query parameters. No longer
+    available; endpoint modeled from historical documentation and community client
+    libraries.
+- aid: yummly:yummly-metadata-api
+  name: Yummly Metadata API (Historical)
+  tags:
+  - Metadata
+  - Taxonomy
+  - Deprecated
+  - Historical
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.yummly.com/documentation.html
+  baseURL: http://api.yummly.com/v1/api
+  properties:
+  - url: https://developer.yummly.com/documentation.html
+    type: Documentation
+  description: DEPRECATED / HISTORICAL. The Metadata endpoints
+    (GET http://api.yummly.com/v1/api/metadata/{key}) returned the controlled
+    vocabularies used to build search filters - keys included ingredient, allergy,
+    diet, cuisine, course, holiday, technique, source, brand, and restriction. Used
+    to populate valid facet values for the Search Recipes endpoint. No longer
+    available; endpoints modeled from historical documentation and community client
+    libraries.
+common:
+- type: Website
+  url: https://www.yummly.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/yummly
+- type: Documentation
+  url: https://developer.yummly.com/documentation.html
+- type: Plans
+  url: plans/yummly-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/yummly-rate-limits.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

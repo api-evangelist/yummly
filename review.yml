@@ -1,0 +1,89 @@
+aid: yummly
+name: Yummly
+review:
+  question: Does Yummly expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  apiStatus: deprecated
+  operatingStatus: 'Yummly the consumer product (yummly.com and mobile apps) remains
+    operational under Whirlpool Corporation; the Yummly public developer API program
+    is deprecated and shut down.'
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Yummly never published a WebSocket or other
+    server-push API. Its historical public surface was a request/response REST
+    Recipe API (Search Recipes, Get Recipe, Metadata) over HTTPS, and that program
+    is now deprecated and unavailable. There is no realtime transport to model, and
+    no live surface to model at all.
+findings:
+  summary: |
+    Yummly does not expose a documented public WebSocket API, and as of the review
+    date it exposes no publicly available developer API at all. Yummly is a recipe
+    and food discovery platform founded in 2009 (Redwood City, CA) and acquired by
+    Whirlpool Corporation in May 2017. Historically Yummly ran a well-known public
+    Recipe API at developer.yummly.com with a REST base of
+    http://api.yummly.com/v1/api, offering three logical surfaces: Search Recipes
+    (GET /recipes), Get Recipe (GET /recipe/{id}), and Metadata
+    (GET /metadata/{key}), authenticated with _app_id and _app_key query
+    parameters and returning JSON. That developer program was deprecated - it
+    stopped accepting new signups and was wound down (commonly cited end date of
+    September 30, 2019). At review time the developer.yummly.com hostname does not
+    resolve (DNS lookup fails) and the api.yummly.com endpoints are not reachable,
+    confirming the API is fully retired. All endpoints below are HISTORICAL /
+    MODELED for archival and migration reference; none are live. No WebSocket
+    (ws:// or wss://) endpoint was ever documented.
+  apiHistory: |
+    Yummly's Recipe API was one of the more prominent food/recipe APIs of the early
+    2010s and was widely used in academic and hobby projects (numerous community
+    client libraries exist, e.g. dgilland/yummly.py). After Whirlpool acquired
+    Yummly in 2017 to support its smart-kitchen strategy, the standalone developer
+    program was phased out: new API account signups were closed and the program was
+    discontinued (commonly referenced as ending September 30, 2019). Third parties
+    such as EatID and RapidAPI-hosted alternatives positioned themselves as
+    replacements for developers who had relied on the Yummly API.
+  transports:
+    - protocol: REST
+      scheme: http
+      baseURL: http://api.yummly.com/v1/api
+      documented: false
+      note: Historical REST Recipe API. Was documented at developer.yummly.com; now deprecated and unreachable.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint was ever documented by Yummly.
+  endpointsModeled:
+    - GET http://api.yummly.com/v1/api/recipes
+    - GET http://api.yummly.com/v1/api/recipe/{recipe-id}
+    - GET http://api.yummly.com/v1/api/metadata/{key}
+  authentication:
+    method: API key pair via query parameters
+    parameters:
+      - _app_id
+      - _app_key
+    note: Historical. Credentials were issued via the developer.yummly.com portal, which no longer accepts signups.
+sources:
+  - url: https://developer.yummly.com/documentation.html
+    type: Documentation
+    note: Historical Yummly API documentation (portal now offline / hostname does not resolve).
+  - url: https://github.com/dgilland/yummly.py
+    type: SourceCode
+    note: Community Python client confirming base URL api.yummly.com/v1/api and the /recipes, /recipe/{id}, /metadata/{key} paths.
+  - url: https://github.com/conwayyao/Recipe-Analysis
+    type: SourceCode
+    note: Academic-plan usage of the Yummly Recipe API (search parameters, filters).
+  - url: https://techcrunch.com/2017/05/04/whirlpool-acquires-yummly-the-recipe-search-engine-last-valued-at-100m/
+    type: Article
+    note: Whirlpool acquisition of Yummly, announced May 2017.
+  - url: https://en.wikipedia.org/wiki/Yummly
+    type: Reference
+    note: Yummly company history, founding (2009), and Whirlpool ownership.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists and, more fundamentally, Yummly no longer
+    exposes any live public developer API. The historical REST Recipe API (Search
+    Recipes, Get Recipe, Metadata) is cataloged as deprecated / modeled from
+    archived documentation and community client libraries. No AsyncAPI document was
+    created because there is no server-push transport and no live API to model.

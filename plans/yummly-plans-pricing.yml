@@ -1,0 +1,153 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Yummly
+providerId: yummly
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+status: deprecated
+tags:
+- Recipes
+- Food
+- Recipe Search
+- Deprecated
+- Historical
+- Plans
+description: >-
+  HISTORICAL / DEPRECATED. These plans describe the Yummly Recipe API developer
+  program as it was offered at developer.yummly.com before it stopped accepting
+  new signups and was wound down (commonly cited end date of September 30, 2019).
+  Yummly offered a free evaluation tier and two paid tiers, each with a 14-day
+  free trial, plus custom/enterprise plans. All plans required Yummly Attribution.
+  None of these plans are available today - the developer portal and the
+  api.yummly.com endpoints are offline. Figures are reproduced from historical
+  documentation and archived pricing pages for archival and migration reference
+  only.
+notes: >-
+  The developer.yummly.com hostname no longer resolves. Developers who previously
+  relied on the Yummly API were directed by the community to alternatives (e.g.
+  EatID, RapidAPI-hosted recipe APIs). Do not treat these numbers as a current
+  offer.
+sources:
+- https://developer.yummly.com/plans
+- https://developer.yummly.com/documentation.html
+plans:
+- id: yummly-free
+  name: Free (Evaluation)
+  type: free
+  status: deprecated
+  description: >-
+    Free evaluation access historically capped at roughly 500 API calls, intended
+    for testing the Recipe Search and Get Recipe endpoints. Yummly Attribution
+    required.
+  entries:
+  - label: Included API Calls
+    name: free_api_calls
+    type: usage
+    metric: requests
+    limit: 500
+    timeFrame: total
+    geo: global
+    unit: 1
+    price: free (evaluation only)
+    userMultiplied: false
+  elements:
+  - name: Recipe Search
+  - name: Basic Recipe Data with Images
+  - name: Yummly Attribution Required
+- id: yummly-lite
+  name: Lite (Paid)
+  type: paid
+  status: deprecated
+  description: >-
+    Lower paid tier historically providing about 250,000 API calls per month with
+    full Yummly database access and recipe search filtering, offered with a 14-day
+    free trial (about 5,000 calls). Overage was billed per additional call. Yummly
+    Attribution required.
+  entries:
+  - label: Monthly API Calls
+    name: lite_api_calls
+    type: usage
+    metric: requests
+    limit: 250000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: subscription (see historical pricing page)
+    userMultiplied: false
+  - label: Overage per Additional Call
+    name: lite_overage
+    type: usage
+    metric: requests
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0.002 per additional call
+    userMultiplied: false
+  elements:
+  - name: Full Yummly Database Access
+  - name: Recipe Search Filtering
+  - name: 14-Day Free Trial
+  - name: Yummly Attribution Required
+- id: yummly-plus
+  name: Plus (Paid)
+  type: paid
+  status: deprecated
+  description: >-
+    Higher paid tier historically providing about 4,000,000 API calls per month
+    with full Yummly database access, offered with a 14-day free trial (about
+    5,000 calls). Overage was billed per additional call at a lower rate than the
+    Lite tier. Yummly Attribution required.
+  entries:
+  - label: Monthly API Calls
+    name: plus_api_calls
+    type: usage
+    metric: requests
+    limit: 4000000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: subscription (see historical pricing page)
+    userMultiplied: false
+  - label: Overage per Additional Call
+    name: plus_overage
+    type: usage
+    metric: requests
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0.001 per additional call
+    userMultiplied: false
+  elements:
+  - name: Full Yummly Database Access
+  - name: Recipe Search Filtering
+  - name: 14-Day Free Trial
+  - name: Yummly Attribution Required
+- id: yummly-custom
+  name: Custom / Enterprise
+  type: enterprise
+  status: deprecated
+  description: >-
+    Negotiated custom plans for high-volume use, historically starting around
+    $75,000 per year, with terms arranged directly with Yummly.
+  entries:
+  - label: Custom Agreement
+    name: custom
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: from ~$75,000 per year (historical)
+    userMultiplied: false
+  elements:
+  - name: Custom Volume Pricing
+  - name: Full Yummly Database Access
+  - name: Yummly Attribution Required
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
