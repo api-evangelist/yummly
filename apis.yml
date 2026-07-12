@@ -92,6 +92,8 @@ apis:
     available; endpoints modeled from historical documentation and community client
     libraries.
 common:
+- type: DomainSecurity
+  url: security/yummly-domain-security.yml
 - type: Website
   url: https://www.yummly.com
 - type: LinkedIn
