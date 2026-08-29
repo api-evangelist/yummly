@@ -14,6 +14,17 @@ description: Yummly is a recipe and food discovery platform (yummly.com) offerin
   longer available. There is no public Yummly developer API accepting new
   registrations as of this cataloging (2026-07-03); the APIs below are documented as
   historical / modeled for archival and migration reference only.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
