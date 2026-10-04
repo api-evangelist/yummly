@@ -130,3 +130,7 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-status: acquired
+x-parent: whirlpool
+x-relationship: acquisition
+x-acquired: 2017
